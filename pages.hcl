@@ -1,20 +1,10 @@
-# ==============================================================
-# pages.hcl — Content Pages
-# Each page maps to a markdown instruction file and
-# optionally embeds an interactive task.
-# ==============================================================
-
-
-# Welcome / Intro page (no task)
 resource "page" "welcome" {
-  title = "Welcome & Lab Overview"
+  title = "Welcome and Lab Overview"
   file  = "instructions/welcome.md"
 }
 
-
-# Chapter 1 page — build and push task embedded
 resource "page" "build_push" {
-  title = "Chapter 1 — Build & Push to ECR"
+  title = "Chapter 1 - Build and Push to ECR"
   file  = "instructions/build-push.md"
 
   activities = {
@@ -22,10 +12,8 @@ resource "page" "build_push" {
   }
 }
 
-
-# Chapter 2 page — pull and run task embedded
 resource "page" "pull_run" {
-  title = "Chapter 2 — Pull & Run from ECR"
+  title = "Chapter 2 - Pull and Run from ECR"
   file  = "instructions/pull-run.md"
 
   activities = {

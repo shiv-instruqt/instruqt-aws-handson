@@ -1,10 +1,3 @@
-# ==============================================================
-# layouts.hcl — Lab UI Layout
-#
-# Left column  (40%) : Lab instructions
-# Right column (60%) : Builder terminal, Consumer terminal, AWS Creds
-# ==============================================================
-
 resource "layout" "main" {
   column {
     width = "40"

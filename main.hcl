@@ -1,18 +1,13 @@
-# ==============================================================
-# main.hcl — Lab Definition
-# AWS ECR: Docker Build, Push & Pull
-# ==============================================================
-
 resource "lab" "main" {
-  title       = "AWS ECR: Docker Build, Push & Pull"
-  description = "Build a Docker image in one container, push it to AWS Elastic Container Registry (ECR), then pull and run it from a completely isolated consumer container — a real-world CI/CD workflow."
+  title       = "AWS ECR: Docker Build, Push and Pull"
+  description = "Build a Docker image in one container, push it to AWS Elastic Container Registry, then pull and run it from a completely isolated consumer container."
 
   layout = resource.layout.main
 
   settings {
-    idle_timeout {
+    idle {
       enabled = true
-      timeout = 3600   # Auto-stop after 1 hour of inactivity
+      timeout = "1h"
     }
   }
 
@@ -26,7 +21,7 @@ resource "lab" "main" {
     }
 
     chapter "build_and_push" {
-      title = "Build & Push to ECR"
+      title = "Build and Push to ECR"
 
       page "build_push" {
         reference = resource.page.build_push
@@ -34,7 +29,7 @@ resource "lab" "main" {
     }
 
     chapter "pull_and_run" {
-      title = "Pull & Run from ECR"
+      title = "Pull and Run from ECR"
 
       page "pull_run" {
         reference = resource.page.pull_run
